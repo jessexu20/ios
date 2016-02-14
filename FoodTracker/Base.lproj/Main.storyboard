@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -19,7 +20,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="CkA-Qw-WCg">
-                                <rect key="frame" x="20" y="90" width="560" height="105"/>
+                                <rect key="frame" x="20" y="90" width="560" height="437"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ARb-bn-ePj">
                                         <rect key="frame" x="0.0" y="0.0" width="560" height="21"/>
@@ -39,6 +40,12 @@
                                             <action selector="setDefaultText:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VFk-U2-Kux"/>
                                         </connections>
                                     </button>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="320" image="defaultSet" translatesAutoresizingMaskIntoConstraints="NO" id="O9U-tt-bc0">
+                                        <rect key="frame" x="120" y="117" width="320" height="320"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="O9U-tt-bc0" secondAttribute="height" multiplier="1:1" id="ZqS-pB-fr7"/>
+                                        </constraints>
+                                    </imageView>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="ARb-bn-ePj" firstAttribute="leading" secondItem="CkA-Qw-WCg" secondAttribute="leading" id="ReN-da-6gn"/>
@@ -64,4 +71,7 @@
             <point key="canvasLocation" x="695" y="374"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="defaultSet" width="149" height="162"/>
+    </resources>
 </document>
