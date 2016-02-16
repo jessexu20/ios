@@ -14,7 +14,13 @@ class MealViewController: UIViewController, UITextFieldDelegate,UIImagePickerCon
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var photoImageView: UIImageView!
     @IBOutlet weak var ratingControl: RatingControl!
-    
+    @IBOutlet weak var saveButton: UIBarButtonItem!
+    @IBOutlet weak var cancelButton: UIBarButtonItem!
+    /*
+    This value is either passed by `MealTableViewController` in `prepareForSegue(_:sender:)`
+    or constructed as part of adding a new meal.
+    */
+    var meal: Meal?
     
     
     
@@ -22,6 +28,16 @@ class MealViewController: UIViewController, UITextFieldDelegate,UIImagePickerCon
         super.viewDidLoad()
        
         nameTextField.delegate = self
+        
+        // Set up views if editing an existing Meal.
+        if let meal = meal {
+            navigationItem.title = meal.name
+            nameTextField.text   = meal.name
+            photoImageView.image = meal.photo
+            ratingControl.rating = meal.rating
+        }
+        
+        checkValidMealName()
         
     }
     
@@ -36,8 +52,19 @@ class MealViewController: UIViewController, UITextFieldDelegate,UIImagePickerCon
         return true
     }
     func textFieldDidEndEditing(textField: UITextField) {
-       
+        checkValidMealName()
+        navigationItem.title = textField.text
     }
+    func textFieldDidBeginEditing(textField: UITextField) {
+        saveButton.enabled = false
+    }
+    func checkValidMealName() {
+        // Disable the Save button if the text field is empty.
+        let text = nameTextField.text ?? ""
+        saveButton.enabled = !text.isEmpty
+    }
+    
+
     // MARK: UIImagePickerControllerDelegate
     func imagePickerControllerDidCancel(picker: UIImagePickerController) {
         // Dismiss the picker if the user canceled.
@@ -67,6 +94,28 @@ class MealViewController: UIViewController, UITextFieldDelegate,UIImagePickerCon
         imagePickerController.delegate = self
         
         presentViewController(imagePickerController, animated: true, completion: nil)
+    }
+    
+    // MARK: Navigation
+    // This method lets you configure a view controller before it's presented.
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if saveButton === sender {
+            let name = nameTextField.text ?? ""
+            let photo = photoImageView.image
+            let rating = ratingControl.rating
+            meal = Meal(name: name, rating: rating, photo: photo)
+            
+        }
+    }
+    @IBAction func cancel(sender: UIBarButtonItem) {
+        // Depending on style of presentation (modal or push presentation), this view controller needs to be dismissed in two different ways.
+        let isPresentingInAddMealMode = presentingViewController is UINavigationController
+        if isPresentingInAddMealMode {
+            dismissViewControllerAnimated(true, completion: nil)
+        }
+        else {
+            navigationController!.popViewControllerAnimated(true)
+        }
     }
 
   }
