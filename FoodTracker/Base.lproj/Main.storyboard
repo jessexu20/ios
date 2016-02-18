@@ -78,41 +78,104 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="CkA-Qw-WCg">
-                                <rect key="frame" x="20" y="90" width="560" height="418"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="CkA-Qw-WCg">
+                                <rect key="frame" x="20" y="90" width="560" height="1126"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Default Text" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="C73-wq-5k4">
                                         <rect key="frame" x="0.0" y="0.0" width="560" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="320" image="defaultSet" translatesAutoresizingMaskIntoConstraints="NO" id="O9U-tt-bc0">
-                                        <rect key="frame" x="120" y="42" width="320" height="320"/>
+                                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="300" verticalCompressionResistancePriority="300" misplaced="YES" placeholderIntrinsicWidth="400" placeholderIntrinsicHeight="320" image="defaultSet" translatesAutoresizingMaskIntoConstraints="NO" id="O9U-tt-bc0">
+                                        <rect key="frame" x="80" y="42" width="400" height="800"/>
                                         <gestureRecognizers/>
                                         <constraints>
+                                            <constraint firstAttribute="height" constant="800" id="D44-Pv-nqG"/>
+                                            <constraint firstAttribute="height" constant="800" id="P4n-yU-S5h"/>
                                             <constraint firstAttribute="width" secondItem="O9U-tt-bc0" secondAttribute="height" multiplier="1:1" id="ZqS-pB-fr7"/>
+                                            <constraint firstAttribute="width" constant="800" id="kQx-fi-xQi"/>
                                         </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="D44-Pv-nqG"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="heightClass=regular-widthClass=regular">
+                                            <mask key="constraints">
+                                                <include reference="D44-Pv-nqG"/>
+                                                <exclude reference="P4n-yU-S5h"/>
+                                                <exclude reference="ZqS-pB-fr7"/>
+                                                <exclude reference="kQx-fi-xQi"/>
+                                            </mask>
+                                        </variation>
                                         <connections>
                                             <outletCollection property="gestureRecognizers" destination="O5h-1U-3ix" appends="YES" id="9wN-8g-ngd"/>
                                         </connections>
                                     </imageView>
-                                    <view contentMode="scaleToFill" placeholderIntrinsicWidth="240" placeholderIntrinsicHeight="44" translatesAutoresizingMaskIntoConstraints="NO" id="z2T-Jb-cbL" customClass="RatingControl" customModule="FoodTracker" customModuleProvider="target">
-                                        <rect key="frame" x="160" y="374" width="240" height="44"/>
+                                    <view contentMode="scaleToFill" misplaced="YES" placeholderIntrinsicWidth="240" placeholderIntrinsicHeight="44" translatesAutoresizingMaskIntoConstraints="NO" id="z2T-Jb-cbL" customClass="RatingControl" customModule="FoodTracker" customModuleProvider="target">
+                                        <rect key="frame" x="160" y="854" width="240" height="44"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </view>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="ySa-rI-hjc">
+                                        <rect key="frame" x="200" y="890" width="360" height="484"/>
+                                        <subviews>
+                                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jCD-Ry-bwr">
+                                                <rect key="frame" x="20" y="248" width="320" height="216"/>
+                                                <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
+                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="216"/>
+                                                </variation>
+                                            </pickerView>
+                                        </subviews>
+                                        <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
+                                            <rect key="frame" x="220" y="910" width="320" height="216"/>
+                                        </variation>
+                                    </stackView>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstItem="C73-wq-5k4" firstAttribute="leading" secondItem="CkA-Qw-WCg" secondAttribute="leading" id="2eT-dJ-E2E"/>
                                     <constraint firstItem="C73-wq-5k4" firstAttribute="leading" secondItem="CkA-Qw-WCg" secondAttribute="leading" id="fv3-X9-0oK"/>
                                     <constraint firstAttribute="trailing" secondItem="C73-wq-5k4" secondAttribute="trailing" id="uLa-Q3-dpP"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="2eT-dJ-E2E"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <mask key="constraints">
+                                        <include reference="2eT-dJ-E2E"/>
+                                        <exclude reference="fv3-X9-0oK"/>
+                                        <exclude reference="uLa-Q3-dpP"/>
+                                    </mask>
+                                </variation>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="CkA-Qw-WCg" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="26" id="3zc-sz-UAH"/>
+                            <constraint firstItem="CkA-Qw-WCg" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="4qg-a4-XYQ"/>
                             <constraint firstItem="CkA-Qw-WCg" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="gd1-2e-ZRv"/>
                             <constraint firstAttribute="trailingMargin" secondItem="CkA-Qw-WCg" secondAttribute="trailing" id="nLs-39-FGS"/>
+                            <constraint firstItem="CkA-Qw-WCg" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="tG4-Gz-Wvs"/>
                             <constraint firstItem="CkA-Qw-WCg" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="26" id="zy3-Aq-6t0"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="3zc-sz-UAH"/>
+                                <exclude reference="4qg-a4-XYQ"/>
+                                <exclude reference="tG4-Gz-Wvs"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=regular">
+                            <mask key="constraints">
+                                <include reference="3zc-sz-UAH"/>
+                                <include reference="4qg-a4-XYQ"/>
+                                <exclude reference="gd1-2e-ZRv"/>
+                                <exclude reference="nLs-39-FGS"/>
+                                <include reference="tG4-Gz-Wvs"/>
+                                <exclude reference="zy3-Aq-6t0"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" title="New Meal" id="ybf-xl-vMl">
                         <barButtonItem key="leftBarButtonItem" style="plain" systemItem="cancel" id="euF-kf-d0n">
@@ -128,6 +191,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="cancelButton" destination="euF-kf-d0n" id="Rrg-BK-zvi"/>
+                        <outlet property="mealPicker" destination="jCD-Ry-bwr" id="Ufn-qN-XyP"/>
                         <outlet property="nameTextField" destination="C73-wq-5k4" id="1kF-0U-4CM"/>
                         <outlet property="photoImageView" destination="O9U-tt-bc0" id="NGu-2P-DGP"/>
                         <outlet property="ratingControl" destination="z2T-Jb-cbL" id="QpW-sX-Fna"/>
@@ -182,7 +246,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="defaultSet" width="149" height="162"/>
+        <image name="defaultSet" width="150" height="150"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="bmq-tB-sey"/>

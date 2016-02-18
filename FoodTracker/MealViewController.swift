@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MealViewController: UIViewController, UITextFieldDelegate,UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class MealViewController: UIViewController, UITextFieldDelegate,UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIPickerViewDelegate {
 
     //MARK: Properties
     @IBOutlet weak var nameTextField: UITextField!
@@ -16,28 +16,34 @@ class MealViewController: UIViewController, UITextFieldDelegate,UIImagePickerCon
     @IBOutlet weak var ratingControl: RatingControl!
     @IBOutlet weak var saveButton: UIBarButtonItem!
     @IBOutlet weak var cancelButton: UIBarButtonItem!
+    @IBOutlet weak var mealPicker: UIPickerView!
     /*
     This value is either passed by `MealTableViewController` in `prepareForSegue(_:sender:)`
     or constructed as part of adding a new meal.
     */
     var meal: Meal?
     
-    
-    
+    var mealSelection: [[String]] = [[String]()]
+   
     override func viewDidLoad() {
         super.viewDidLoad()
-       
+        mealSelection = [["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],["Breakfast","Lunch","Dinner"]]
+
         nameTextField.delegate = self
-        
+        mealPicker.delegate = self
         // Set up views if editing an existing Meal.
         if let meal = meal {
             navigationItem.title = meal.name
             nameTextField.text   = meal.name
+            let arr = meal.time.componentsSeparatedByString(" ")
+            let mealDay = arr[0] ?? ""
+            let mealType = arr[1] ?? ""
+            mealPicker.selectRow(mealSelection[0].indexOf(mealDay)!, inComponent: 0, animated: true)
+            mealPicker.selectRow(mealSelection[1].indexOf(mealType)!, inComponent: 1, animated: true)
             photoImageView.image = meal.photo
             ratingControl.rating = meal.rating
         }
-        
-        checkValidMealName()
+                checkValidMealName()
         
     }
     
@@ -45,6 +51,21 @@ class MealViewController: UIViewController, UITextFieldDelegate,UIImagePickerCon
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    //MARK: PickerViewConfig
+      // The number of columns of data
+    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
+        return 2
+    }
+    
+    // The number of rows of data
+    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return mealSelection[component].count
+    }
+    // The data to return for the row and component (column) that's being passed in
+    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return mealSelection[component][row]
+    }
+    
     // MARK: UITextFieldDelegate
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         // Hide the keyboard.
@@ -80,6 +101,7 @@ class MealViewController: UIViewController, UITextFieldDelegate,UIImagePickerCon
     }
     
     //MARK: Actions
+
     @IBAction func selectFromImageLibrary(sender: UITapGestureRecognizer){
         // Hide the keyboard.
         nameTextField.resignFirstResponder()
@@ -88,22 +110,22 @@ class MealViewController: UIViewController, UITextFieldDelegate,UIImagePickerCon
         let imagePickerController = UIImagePickerController()
         
         // Only allow photos to be picked, not taken.
-        imagePickerController.sourceType = .PhotoLibrary
+        imagePickerController.sourceType = .Camera
         
         // Make sure ViewController is notified when the user picks an image.
         imagePickerController.delegate = self
         
         presentViewController(imagePickerController, animated: true, completion: nil)
     }
-    
     // MARK: Navigation
     // This method lets you configure a view controller before it's presented.
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if saveButton === sender {
             let name = nameTextField.text ?? ""
             let photo = photoImageView.image
+            let time = mealSelection[0][mealPicker.selectedRowInComponent(0)] + " " + mealSelection[1][mealPicker.selectedRowInComponent(1)]
             let rating = ratingControl.rating
-            meal = Meal(name: name, rating: rating, photo: photo)
+            meal = Meal(name: name, time:time,rating: rating, photo: photo)
             
         }
     }
