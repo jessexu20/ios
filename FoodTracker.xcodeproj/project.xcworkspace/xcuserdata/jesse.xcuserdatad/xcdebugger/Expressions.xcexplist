@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "Meal.init(coder : NSCoder) -&gt; Meal?:Meal.swift">
+      </ContextState>
+      <ContextState
+         contextName = "MealViewController.viewDidLoad() -&gt; ():MealViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "arr">
+            </PersistentString>
+            <PersistentString
+               value = "mealSelection[0].indexOf(mealDay)">
+            </PersistentString>
+            <PersistentString
+               value = "mealSelection[0]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>
