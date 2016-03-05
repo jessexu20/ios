@@ -7,7 +7,9 @@
 //
 
 import UIKit
-
+import FBSDKCoreKit
+import FBSDKShareKit
+import FBSDKLoginKit
 class MealViewController: UIViewController, UITextFieldDelegate,UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIPickerViewDelegate,FBSDKLoginButtonDelegate {
 
     //MARK: Properties

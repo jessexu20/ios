@@ -7,12 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		889DC7501C87F9960024AF84 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 889DC74F1C87F9960024AF84 /* FBSDKCoreKit.framework */; };
-		889DC7531C87FB020024AF84 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 889DC7511C87FB020024AF84 /* Bolts.framework */; };
-		889DC7541C87FB020024AF84 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 889DC7521C87FB020024AF84 /* FBSDKLoginKit.framework */; };
 		889DC7581C87FE7E0024AF84 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 889DC7551C87FE7E0024AF84 /* Bolts.framework */; };
 		889DC7591C87FE7E0024AF84 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 889DC7561C87FE7E0024AF84 /* FBSDKCoreKit.framework */; };
 		889DC75A1C87FE7E0024AF84 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 889DC7571C87FE7E0024AF84 /* FBSDKLoginKit.framework */; };
+		889DC75C1C8B885F0024AF84 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 889DC75B1C8B885F0024AF84 /* FBSDKShareKit.framework */; };
 		88A705851C714B900034A19D /* Meal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A705841C714B900034A19D /* Meal.swift */; };
 		88A705861C714B900034A19D /* Meal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A705841C714B900034A19D /* Meal.swift */; };
 		88A7058B1C728DCB0034A19D /* MealTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A7058A1C728DCB0034A19D /* MealTableViewCell.swift */; };
@@ -37,13 +35,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		889DC74E1C87F9690024AF84 /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
-		889DC74F1C87F9960024AF84 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = "../../../Desktop/FacebookSDKs-iOS-20160210/FBSDKCoreKit.framework"; sourceTree = "<group>"; };
-		889DC7511C87FB020024AF84 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = "../../../Desktop/FacebookSDKs-iOS-20160210/Bolts.framework"; sourceTree = "<group>"; };
-		889DC7521C87FB020024AF84 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = "../../../Desktop/FacebookSDKs-iOS-20160210/FBSDKLoginKit.framework"; sourceTree = "<group>"; };
 		889DC7551C87FE7E0024AF84 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		889DC7561C87FE7E0024AF84 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		889DC7571C87FE7E0024AF84 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		889DC75B1C8B885F0024AF84 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
 		88A705841C714B900034A19D /* Meal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Meal.swift; sourceTree = "<group>"; };
 		88A7058A1C728DCB0034A19D /* MealTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MealTableViewCell.swift; path = ../MealTableViewCell.swift; sourceTree = "<group>"; };
 		88AA99E81C729D2B00BC76C8 /* MealTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealTableViewController.swift; sourceTree = "<group>"; };
@@ -66,10 +61,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				889DC7591C87FE7E0024AF84 /* FBSDKCoreKit.framework in Frameworks */,
-				889DC7531C87FB020024AF84 /* Bolts.framework in Frameworks */,
 				889DC75A1C87FE7E0024AF84 /* FBSDKLoginKit.framework in Frameworks */,
-				889DC7541C87FB020024AF84 /* FBSDKLoginKit.framework in Frameworks */,
-				889DC7501C87F9960024AF84 /* FBSDKCoreKit.framework in Frameworks */,
+				889DC75C1C8B885F0024AF84 /* FBSDKShareKit.framework in Frameworks */,
 				889DC7581C87FE7E0024AF84 /* Bolts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -87,9 +80,6 @@
 		88D4FAF61C6E5E1000BE230C = {
 			isa = PBXGroup;
 			children = (
-				889DC7511C87FB020024AF84 /* Bolts.framework */,
-				889DC7521C87FB020024AF84 /* FBSDKLoginKit.framework */,
-				889DC74F1C87F9960024AF84 /* FBSDKCoreKit.framework */,
 				88D4FB011C6E5E1000BE230C /* FoodTracker */,
 				88D4FB161C6E5E1000BE230C /* FoodTrackerTests */,
 				88D4FB001C6E5E1000BE230C /* Products */,
@@ -118,7 +108,7 @@
 				88D4FB0E1C6E5E1000BE230C /* Info.plist */,
 				88DF70A71C70300A00C290B0 /* RatingControl.swift */,
 				88A705841C714B900034A19D /* Meal.swift */,
-				889DC74E1C87F9690024AF84 /* Bridging-Header.h */,
+				889DC75B1C8B885F0024AF84 /* FBSDKShareKit.framework */,
 				889DC7551C87FE7E0024AF84 /* Bolts.framework */,
 				889DC7561C87FE7E0024AF84 /* FBSDKCoreKit.framework */,
 				889DC7571C87FE7E0024AF84 /* FBSDKLoginKit.framework */,
@@ -379,7 +369,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = jesse.foodTracker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "FoodTracker/Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 			};
 			name = Debug;
 		};
@@ -395,7 +385,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = jesse.foodTracker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "FoodTracker/Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 			};
 			name = Release;
 		};

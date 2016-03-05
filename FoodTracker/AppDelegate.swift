@@ -7,7 +7,9 @@
 //
 
 import UIKit
-
+import FBSDKCoreKit
+import FBSDKShareKit
+import FBSDKLoginKit
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 

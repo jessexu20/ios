@@ -112,9 +112,19 @@
                                             <outletCollection property="gestureRecognizers" destination="O5h-1U-3ix" appends="YES" id="9wN-8g-ngd"/>
                                         </connections>
                                     </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gPB-A2-kzN">
+                                        <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                        <state key="normal" title="Share"/>
+                                        <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
+                                            <rect key="frame" x="360" y="854" width="40" height="30"/>
+                                        </variation>
+                                    </button>
                                     <view contentMode="scaleToFill" placeholderIntrinsicWidth="240" placeholderIntrinsicHeight="44" translatesAutoresizingMaskIntoConstraints="NO" id="z2T-Jb-cbL" customClass="RatingControl" customModule="FoodTracker" customModuleProvider="target">
                                         <rect key="frame" x="160" y="854" width="240" height="44"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
+                                            <rect key="frame" x="260" y="896" width="240" height="44"/>
+                                        </variation>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="ySa-rI-hjc">
                                         <rect key="frame" x="120" y="910" width="320" height="216"/>
@@ -131,11 +141,17 @@
                                     <constraint firstAttribute="trailing" secondItem="C73-wq-5k4" secondAttribute="trailing" id="uLa-Q3-dpP"/>
                                 </constraints>
                                 <variation key="default">
+                                    <mask key="subviews">
+                                        <exclude reference="gPB-A2-kzN"/>
+                                    </mask>
                                     <mask key="constraints">
                                         <exclude reference="2eT-dJ-E2E"/>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=regular">
+                                    <mask key="subviews">
+                                        <include reference="gPB-A2-kzN"/>
+                                    </mask>
                                     <mask key="constraints">
                                         <include reference="2eT-dJ-E2E"/>
                                         <exclude reference="fv3-X9-0oK"/>
